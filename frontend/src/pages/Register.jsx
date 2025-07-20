@@ -40,7 +40,7 @@ export default function Register() {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", cleanedForm);
+      await axios.post("https://e-commerece-website-backend.onrender.com/api/auth/register", cleanedForm);
       setForm({ username: "", email: "", password: "" });
       setMsg("Registration successful! Redirecting to login...");
       navigate("/login");
