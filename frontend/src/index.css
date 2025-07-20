@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+}
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+:root {
+  --bg-main: #121212;
+  --bg-section: #1E1E1E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-muted: #888888;
+  --btn-primary-bg: #FFFFFF;
+  --btn-primary-text: #000000;
+  --card-bg: #1F1F1F;
+  --border-color: #333333;
+  --discount-color: #FF4D6D;
+  --price-muted: #888888;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+.heading{
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-20px) ;
+  }
+  to {
+    transform: translateX(0) ;
+  }
+}
+.animate-slide-in {
+  animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0) ;
+  }
+  to {
+    transform: translateX(-20px) ;
+  }
+}
+
+.animate-slide-out {
+  animation: slide-out 0.3s ease forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.2s ease-out;
+}
