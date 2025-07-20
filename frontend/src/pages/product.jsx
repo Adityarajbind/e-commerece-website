@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/header";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import { products } from "../data";
 import ProductDetail from "../components/productdetails";
 import ProductSection from "../components/ProductSection";
