@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Header from "../components/header";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import CartItem from "../components/CartItem";
 import { CartContext } from "../context/CartContext";
 
