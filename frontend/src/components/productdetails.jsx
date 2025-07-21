@@ -7,21 +7,37 @@ import { useNavigate } from "react-router-dom";
 import CommentCard from "./commentCard";
 
 const ProductDetail = ({ product, id }) => {
-  const [ProductAdded, setProductAdded] = useState(false);
+    const [ProductAdded, setProductAdded] = useState(false);
   const { addToCart } = useContext(CartContext);
+  const [activeTab, setActiveTab] = useState("details");
+  const Navigate = useNavigate();
+
+  // Safe state setup
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState("Large");
+  const [quantity, setQuantity] = useState(1);
+  const [selectedShirt, setSelectedShirt] = useState(null);
+
+  // Set states only when product is available
+  useEffect(() => {
+    if (product) {
+      setSelectedColor(product.colors?.[0] || null);
+      setSelectedShirt(product.image);
+    }
+  }, [product]);
+
+  const increase = () => setQuantity((q) => q + 1);
+  const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+
+  // 💡 Show loading or error fallback
+  if (!product) {
+    return <div className="p-8 text-center text-gray-600">Loading product...</div>;
+  }
+
   const fullStars = Math.floor(product.rating);
   const hasHalfStar = product.rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-  const [activeTab, setActiveTab] = useState("details");
-  const Navigate = useNavigate();
-  console.log(product);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState("Large");
-  const [quantity, setQuantity] = useState(1);
-  const [selectedShirt, setselectedShirt] = useState(product.image);
-  const increase = () => setQuantity((q) => q + 1);
-  const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
-  const { title, price, image ,originalPrice} = product;
+  const { title, price, image, originalPrice } = product;
   return (
     <>
       <div className="flex justify-between items-center  w-full md:h-[80vh] md:flex-row flex-col">
