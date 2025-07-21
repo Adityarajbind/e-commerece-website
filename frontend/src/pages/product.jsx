@@ -22,7 +22,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/products/${id}`)
+      .get(`https://e-commerece-website-backend.onrender.com/api/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         console.log(product)

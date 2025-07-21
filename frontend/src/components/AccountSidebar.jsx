@@ -28,7 +28,7 @@ const AccountSidebar = () => {
         setLoading(true);
         const token = localStorage.getItem("token");
 
-        const res = await fetch("/api/user/me", {
+        const res = await fetch("https://e-commerece-website-backend.onrender.com/api/user/me", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
