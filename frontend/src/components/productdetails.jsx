@@ -52,7 +52,7 @@ const ProductDetail = ({ product, id }) => {
                   selectedShirt === thumb ? "border-2 border-gray-600" : ""
                 } md:w-full md:h-1/3 h-full w-1/3 max-[768px]:aspect-square bg-no-repeat bg-cover rounded-2xl cursor-pointer`}
                 style={{ backgroundImage: `url(${thumb})` }}
-                onClick={() => setselectedShirt(thumb)}
+                onClick={() => setSelectedShirt(thumb)}
               ></div>
             ))}
           </div>
