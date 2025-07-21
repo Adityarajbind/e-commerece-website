@@ -45,7 +45,7 @@ const ProductDetail = ({ product, id }) => {
 
         <div className="md:w-[49%] w-full flex justify-evenly items-center h-full  md:flex-row flex-col-reverse gap-4">
           <div className="flex gap-2 md:flex-col md:w-[25%] md:h-full w-full h-[25%]">
-            {product.thumbnails.map((thumb, index) => (
+            {product.thumbnails?.map((thumb, index) => (
               <div
                 key={index}
                 className={`${
@@ -122,7 +122,7 @@ const ProductDetail = ({ product, id }) => {
               Select Color
             </p>
             <div className="flex gap-2">
-              {product.colors.map((color, i) => (
+              {product.colors?.map((color, i) => (
                 <button
                   key={i}
                   onClick={() => setSelectedColor(color)}
