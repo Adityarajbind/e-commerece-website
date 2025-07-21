@@ -12,10 +12,15 @@ dotenv.config(); // Loads variables from .env
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const allowedOrigins = [
+  'https://e-commerece-website-bice.vercel.app', // your frontend domain
+];
 // Middleware
-app.use(cors());            // Allows frontend to access backend
 app.use(express.json()); 
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, // if you're using cookies or auth headers
+}));          // Allows frontend to access backend
 app.use(helmet());          // Secures Express apps by setting various HTTP headers
 
 app.use("/api", rateLimit({
@@ -30,15 +35,14 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.log('❌ MongoDB Error:', err));
 
 // Test route
+
+app.use("/api/auth", authRoutes);
 app.get('/', (req, res) => {
   res.send('API is runnin');
 });
-
 app.use('/api/products', productRoutes);
-app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
-
