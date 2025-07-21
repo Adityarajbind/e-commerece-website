@@ -23,7 +23,10 @@ const Product = () => {
   useEffect(() => {
     axios
       .get(`/api/products/${id}`)
-      .then((res) => setProduct(res.data))
+      .then((res) => {
+        setProduct(res.data);
+        console.log(product)
+      })
       .catch((err) => console.error(err));
   }, [id]);
   return (
