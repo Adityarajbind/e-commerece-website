@@ -1,4 +1,4 @@
-import { useState, useContext,useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Star, StarHalf, StarOff, Minus, Plus } from "lucide-react";
 import { reviews } from "../data";
 import { CartContext } from "../context/CartContext";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import CommentCard from "./commentCard";
 
 const ProductDetail = ({ product, id }) => {
-    const [ProductAdded, setProductAdded] = useState(false);
+  const [ProductAdded, setProductAdded] = useState(false);
   const { addToCart } = useContext(CartContext);
   const [activeTab, setActiveTab] = useState("details");
   const Navigate = useNavigate();
@@ -19,7 +19,7 @@ const ProductDetail = ({ product, id }) => {
   const [selectedShirt, setSelectedShirt] = useState(null);
   const fullStars = Math.floor(product?.rating || 0);
   const hasHalfStar = (product?.rating || 0) % 1 >= 0.5;
-  
+
   // Set states only when product is available
   useEffect(() => {
     if (product) {
@@ -27,13 +27,18 @@ const ProductDetail = ({ product, id }) => {
       setSelectedShirt(product.image);
     }
   }, [product]);
+  useEffect(() => {
+    console.log("Product updated:", product);
+  }, [product]);
 
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
   // 💡 Show loading or error fallback
   if (!product) {
-    return <div className="p-8 text-center text-gray-600">Loading product...</div>;
+    return (
+      <div className="p-8 text-center text-gray-600">Loading product...</div>
+    );
   }
 
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -113,7 +118,7 @@ const ProductDetail = ({ product, id }) => {
           </div>
 
           <p className="text-gray-600 my-4 dark:text-[var(--text-secondary)]">
-            {product?.description|| "loading... "}
+            {product?.description || "loading... "}
           </p>
           <Line w={100} />
           {/* Colors */}
@@ -277,7 +282,7 @@ const ProductDetail = ({ product, id }) => {
             Product added to cart
           </span>
           <button
-            onClick={()=> Navigate('/cart')}
+            onClick={() => Navigate("/cart")}
             className="bg-black text-white text-sm px-4 py-2 rounded-full hover:bg-gray-800 transition"
           >
             Go to Cart
