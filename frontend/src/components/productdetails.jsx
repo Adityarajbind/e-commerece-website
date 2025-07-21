@@ -14,6 +14,7 @@ const ProductDetail = ({ product, id }) => {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
   const [activeTab, setActiveTab] = useState("details");
   const Navigate = useNavigate();
+  console.log(product);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState("Large");
   const [quantity, setQuantity] = useState(1);

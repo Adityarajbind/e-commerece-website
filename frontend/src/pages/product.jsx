@@ -24,7 +24,7 @@ const Product = () => {
     axios
       .get(`/api/products/${id}`)
       .then((res) => setProduct(res.data))
-      .catch((err) => console.error(err+"error hai bhai"));
+      .catch((err) => console.error(err));
   }, [id]);
   return (
     <>
