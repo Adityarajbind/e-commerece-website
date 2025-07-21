@@ -17,7 +17,9 @@ const ProductDetail = ({ product, id }) => {
   const [selectedSize, setSelectedSize] = useState("Large");
   const [quantity, setQuantity] = useState(1);
   const [selectedShirt, setSelectedShirt] = useState(null);
-
+  const fullStars = Math.floor(product?.rating || 0);
+  const hasHalfStar = (product?.rating || 0) % 1 >= 0.5;
+  
   // Set states only when product is available
   useEffect(() => {
     if (product) {
@@ -34,8 +36,6 @@ const ProductDetail = ({ product, id }) => {
     return <div className="p-8 text-center text-gray-600">Loading product...</div>;
   }
 
-  const fullStars = Math.floor(product.rating);
-  const hasHalfStar = product.rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
   const { title, price, image, originalPrice } = product;
   return (
@@ -97,23 +97,23 @@ const ProductDetail = ({ product, id }) => {
               ))}
             </div>
             <span className="ml-2 text-sm text-gray-600 dark:text-[var(--text-secondary)]">
-              {product.rating}/5
+              {product?.rating || 0}/5
             </span>
           </div>
 
           {/* Price */}
           <div className="flex items-center gap-4 mb-2">
-            <span className="text-2xl font-bold">${product.price}</span>
+            <span className="text-2xl font-bold">${product?.price || 0}</span>
             <span className="line-through text-2xl font-bold text-gray-300 dark:text-[var(--text-secondary)]">
-              ${product.originalPrice}
+              ${product?.originalPrice || 0}
             </span>
             <span className="text-pink-500 bg-pink-100 dark:bg-[var(--discount-color)] dark:text-pink-100  font-semibold px-2 py-0.5 rounded-full">
-              -{product.discount}%
+              -{product?.discount || 0}%
             </span>
           </div>
 
           <p className="text-gray-600 my-4 dark:text-[var(--text-secondary)]">
-            {product.description}
+            {product?.description|| "loading... "}
           </p>
           <Line w={100} />
           {/* Colors */}
