@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext,useEffect } from "react";
 import { Star, StarHalf, StarOff, Minus, Plus } from "lucide-react";
 import { reviews } from "../data";
 import { CartContext } from "../context/CartContext";
