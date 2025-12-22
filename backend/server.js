@@ -13,7 +13,8 @@ dotenv.config(); // Loads variables from .env
 const app = express();
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
-  'https://e-commerece-website-bice.vercel.app', // your frontend domain
+  "http://localhost:5173",
+  'https://e-commerece-website-bice.vercel.app', // frontend domain
 ];
 // Middleware
 app.use(express.json()); 

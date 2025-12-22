@@ -45,8 +45,9 @@ export default function Register() {
       setMsg("Registration successful! Redirecting to login...");
       navigate("/login");
     } catch (err) {
+      console.log(err);
       const errorMsg =
-        err.response?.data?.error || "Something went wrong. Please try again.";
+        err.message || "Something went wrong. Please try again.";
       setMsg(errorMsg);
     }
   };
@@ -144,7 +145,7 @@ export default function Register() {
               </div>
               <button
                 onClick={handleSubmit}
-                className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition"
+                className="w-full hover:cursor-pointer bg-black text-white py-2 rounded-md hover:bg-gray-800 transition"
               >
                 Register
               </button>
