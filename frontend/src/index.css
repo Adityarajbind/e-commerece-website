@@ -104,3 +104,16 @@ body{
 .animate-fade-in-up {
   animation: fade-in-up 0.2s ease-out;
 }
+
+/* Smooth dark mode transition */
+* {
+  transition: background-color 300ms ease,
+              color 300ms ease,
+              border-color 300ms ease,
+              fill 300ms ease,
+              stroke 300ms ease;
+}
+
+body {
+  transition: background-color 300ms ease, color 300ms ease;
+}

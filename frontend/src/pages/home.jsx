@@ -95,7 +95,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="right h-full w-[50%] md:max-w-full max-[769px]:w-full flex justify-center items-center">
+        <div className=" h-full w-[50%] md:max-w-full max-[769px]:w-full flex justify-center items-center self-end">
           <img
             src="/assets/Group 17 dark.png"
             alt="Fashion"
@@ -121,7 +121,6 @@ function Home() {
       <ProductSection title={"TOP SELLING"} products={featuredProducts2} />
 
       {/* categories */}
-      {/* add dark mode functionality  */}
       <div className="w-[94%] bg-[#f0f0f0] dark:bg-[var(--card-bg)] mx-auto mb-20 rounded-3xl min-[481px]:p-10 p-2">
         <h1 className="text-center md:text-[2.5rem] text-3xl font-bold my-10">
           BROWSE BY DRESS STYLE

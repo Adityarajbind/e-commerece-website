@@ -94,14 +94,14 @@ const Header = () => {
         </nav>
         <div className="relative hidden min-[769px]:flex flex-col w-[34%] h-full justify-center items-center">
           {/* Search Bar */}
-          <div className="search-bar hidden min-[769px]:flex bg-[#ffffff] dark:bg-[var(--card-bg)] items-center h-3/4 rounded-3xl gap-2 px-3 w-full">
+          <div className="search-bar hidden min-[769px]:flex bg-[#ffffff] dark:bg-[var(--card-bg)] items-center h-3/4 rounded-3xl gap-2 px-3 w-full text-[#868686] dark:text-[var(--text-primary)] border dark:border-neutral-700  border-nuetral-400 ">
             <img src="/icons/search.svg" alt="search" className="dark:invert" />
             <input
               type="text"
               placeholder="Search for products..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full bg-transparent outline-none"
+              className="w-full bg-transparent outline-none  "
             />
           </div>
 
