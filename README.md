@@ -82,6 +82,6 @@ npm install
 npm run dev
 ```
 
-##License
+## License
 - This project is for educational and portfolio purposes.
 
