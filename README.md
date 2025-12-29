@@ -11,7 +11,7 @@ category filtering, and a persistent shopping cart.A responsive UI clone of the 
 ## Screenshots
 ![Homepage](frontend/public/assets/home.png)
 
-## Features
+# Features
 ## User Features
 - User registration and login (JWT authentication)
 - Secure password hashing
