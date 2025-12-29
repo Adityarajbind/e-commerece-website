@@ -68,7 +68,7 @@ cd e-commerece-website
 ```bash
 cd backend
 npm install
-npm run dev
+node ./server.js
 ```
 ## Create a .env file inside the backend folder:
 ```bash
