@@ -12,7 +12,7 @@ category filtering, and a persistent shopping cart.A responsive UI clone of the 
 ![Homepage](frontend/public/assets/home.png)
 
 ## Features
-##User Features
+## User Features
 - User registration and login (JWT authentication)
 - Secure password hashing
 - Browse clothing products
@@ -23,32 +23,34 @@ category filtering, and a persistent shopping cart.A responsive UI clone of the 
 - Persistent cart for logged-in users
 - Fully responsive design
 
-##Backend Features
+## Backend Features
 - RESTful API using Express
 - MongoDB database with Mongoose models
 - JWT-based authentication & authorization
 - Protected routes and middleware
 
 ## Tech Stack
-##Frontend
+
+### Frontend
 - React
 - Tailwind CSS
 - JavaScript (ES6+)
 - Vite
 
-##Backend
+### Backend
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
 - JSON Web Tokens (JWT)
-## Utilities
+
+### Utilities
 - Axios
 - bcrypt
 - dotenv
 
-## Purpose of This Project
-##This project was built to:
+# Purpose of This Project
+## This project was built to:
 - Learn full-stack MERN development
 - Implement authentication and authorization
 - Design RESTful APIs
@@ -56,24 +58,24 @@ category filtering, and a persistent shopping cart.A responsive UI clone of the 
 - Build real-world e-commerce features
 - building responsive designs
 
-##Installation & Setup
-##Clone the Repository
+# Installation & Setup
+## Clone the Repository
 ```bash
 git clone https://github.com/Adityarajbind/e-commerece-website.git
 cd e-commerece-website
 ```
-##Backend Setup
+## Backend Setup
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-##Create a .env file inside the backend folder:
+## Create a .env file inside the backend folder:
 ```bash
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 ```
-##Frontend Setup
+## Frontend Setup
 ```bash
 cd frontend
 npm install
