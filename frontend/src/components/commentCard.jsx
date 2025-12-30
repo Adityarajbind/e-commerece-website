@@ -73,11 +73,11 @@ const CommentCard = ({ stars, name, comment }) => {
   return (
     <>
       {/* Review Card */}
-      <div className="border border-[#b2b2b2] p-5 rounded-lg shadow-md m-1 flex flex-col gap-2 h-[13rem] dark:bg-[var(--bg-section)]">
+      <div className="border border-[#b2b2b2] p-5 rounded-lg shadow-md m-1 flex flex-col gap-2 h-[13rem] dark:bg-[var(--bg-section)] hover:scale-102 transform transition-transform duration-300 ease-in-out">
         <div className="flex justify-between items-center">
           {renderStars(stars)}
           <button
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-gray-700 cursor-pointer"
             onClick={() =>
               handleToggleWithAnimation(
                 commentPreview,

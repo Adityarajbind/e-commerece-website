@@ -129,7 +129,7 @@ const Header = () => {
         {/* Action Buttons */}
         <div className="flex gap-3 ">
           <button
-            className="bg-[#f0f0f0] dark:bg-[var(--card-bg)] rounded-full p-2 cursor-pointer hidden max-[769px]:flex"
+            className="bg-[#f0f0f0] hover:bg-neutral-200 dark:hover:bg-neutral-700  dark:bg-[var(--card-bg)] rounded-full p-2 cursor-pointer hidden max-[769px]:flex"
             onClick={() =>
               handleToggleWithAnimation(search, setSearch, setSearchClosing)
             }

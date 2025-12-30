@@ -9,8 +9,10 @@ const AccountSidebar = () => {
   const [loading, setLoading] = useState(false);
 
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme ? storedTheme === "dark" : true;
   });
+
 
   useEffect(() => {
     if (darkMode) {

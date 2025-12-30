@@ -50,7 +50,7 @@ const handleToggle = () => {
     <>
       <Header />
       <main className="category-page flex items-center justify-around min-h-screen  dark:bg-[var(--bg-section)] w-full sm:px-5 px-2  sm:pt-5 pt-1 relative ">
-        <div className="ilter w-1/4 border border-gray-400 rounded-3xl m-2  p-5 flex flex-col items-center justify-center self-start max-[768px]:hidden">
+        <div className="filter w-1/4 border border-gray-400 rounded-3xl m-2  p-5 flex flex-col items-center justify-center self-start max-[768px]:hidden">
           <div className="text-xl font-semibold flex justify-between items-center w-full pb-3 mb-3 border-b border-gray-400">
             <span>Filter</span>
             <img
@@ -177,7 +177,7 @@ const handleToggle = () => {
           </div>
 
           {/* Apply Filter Button */}
-          <button className="mt-8 bg-black text-white w-full py-2 rounded-full hover:bg-gray-800 transition">
+          <button className="mt-8 bg-black text-white w-full py-2 rounded-full hover:bg-gray-800 transition cursor-pointer">
             Apply Filter
           </button>
         </div>
@@ -193,7 +193,7 @@ const handleToggle = () => {
               <select
                 name="order"
                 id="order"
-                className="bg-transparent text-black outline-none font-semibold text-[1rem] sm:inline hidden"
+                className="bg-transparent dark:text-gray-400 text-black outline-none font-semibold text-[1rem] sm:inline hidden cursor-pointer"
               >
                 <option value="most_popular">Most Popular</option>
                 <option value="newest">Newest</option>
@@ -218,7 +218,7 @@ const handleToggle = () => {
           <div className="w-[98%] bg-[#f0f0f0] h-[1px] mb-2 mx-2"></div>
           <div className="flex w-full justify-between items-center sm:px-2 px-1 mb-2">
             <button
-              className="flex justify-center gap-2  border dark:text-white px-4 py-2 rounded-xl  hover:bg-gray-800 transition"
+              className="flex justify-center gap-2  border dark:text-white px-4 py-2 rounded-xl  hover:bg-gray-800 transition cursor-pointer"
               onClick={() => sliderRef.current?.slickPrev()}
             >
               {" "}
@@ -230,7 +230,7 @@ const handleToggle = () => {
               previous
             </button>
             <button
-              className="flex justify-center gap-2 border dark:text-white px-4 py-2 rounded-xl  hover:bg-gray-800 transition"
+              className="flex justify-center gap-2 border dark:text-white px-4 py-2 rounded-xl  hover:bg-gray-800 transition cursor-pointer"
               onClick={() => sliderRef.current?.slickNext()}
             >
               next{" "}

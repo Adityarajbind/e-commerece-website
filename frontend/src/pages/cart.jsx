@@ -145,7 +145,7 @@ const Cart = () => {
                     />
                   </div>
                   <button
-                    className="bg-black text-white px-6 py-2 rounded-full text-xs hover:bg-gray-800 transition"
+                    className="bg-black text-white px-6 py-2 rounded-full text-xs hover:bg-gray-800 transition cursor-pointer"
                     onClick={handleApplyPromoCode}
                   >
                     Apply
@@ -159,7 +159,7 @@ const Cart = () => {
                   {msg}
                 </div>
 
-                <button className="bg-black w-[95%] text-white px-6 py-3 rounded-full text-xs hover:bg-gray-800 transition mt-3 mx-auto">
+                <button className="bg-black w-[95%] text-white px-6 py-3 rounded-full text-xs hover:bg-gray-800 transition mt-3 mx-auto cursor-pointer">
                   Checkout
                 </button>
               </div>

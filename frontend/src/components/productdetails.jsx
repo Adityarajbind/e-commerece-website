@@ -114,7 +114,7 @@ const ProductDetail = ({ product, id }) => {
                 <button
                   key={i}
                   onClick={() => setSelectedColor(color)}
-                  className={`w-6 h-6 rounded-full border-2 ${
+                  className={`w-6 h-6 rounded-full border-2 cursor-pointer ${
                     selectedColor === color
                       ? "border-gray-600"
                       : "border-transparent"
@@ -133,9 +133,9 @@ const ProductDetail = ({ product, id }) => {
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`px-3 py-2 max-[375px]:px-[0.3rem] max-[375px]:py-1 rounded-full ${
+                  className={`px-3 py-2 max-[375px]:px-[0.3rem] max-[375px]:py-1 cursor-pointer rounded-full hover:bg-gray-400 ${
                     selectedSize === size
-                      ? "bg-black text-[#ffffff]"
+                      ? "bg-black text-[#ffffff] hover:bg-neutral-950"
                       : "bg-[#dddddd] text-black border-gray-800"
                   }`}
                 >
@@ -149,16 +149,16 @@ const ProductDetail = ({ product, id }) => {
           {/* Quantity + Add to Cart */}
           <div className="flex items-center gap-4 mt-6">
             <div className="flex items-center bg-[#dddddd] dark:text-black rounded-full px-3 py-2 max-[375px]:px-2 max-[375px]:py-1">
-              <button onClick={decrease} className="p-2">
+              <button onClick={decrease} className="p-2 cursor-pointer hover:bg-gray-400 rounded-full">
                 <Minus size={16} />
               </button>
               <span className="px-3">{quantity}</span>
-              <button onClick={increase} className="p-2">
+              <button onClick={increase} className="p-2 cursor-pointer hover:bg-gray-400 rounded-full">
                 <Plus size={16} />
               </button>
             </div>
             <button
-              className="bg-black text-white px-12 py-3 max-[375px]:px-6 max-[375px]:py-[0.62rem] rounded-full hover:bg-gray-800 transition"
+              className="bg-black text-white px-12 py-3 max-[375px]:px-6 max-[375px]:py-[0.62rem] rounded-full hover:bg-gray-800 transition cursor-pointer"
               onClick={() => {
                 addToCart({ id, title, price, image, originalPrice, quantity });
                 setProductAdded(true);
@@ -177,7 +177,7 @@ const ProductDetail = ({ product, id }) => {
           <button
             className={`px-6 py-3 max-[375px]:px-0 max-[375px]:py-3 w-1/2 text-[1rem] ${
               activeTab === "details"
-                ? "border-b-2 border-black dark:border-white text-black dark:text-[var(--text-secondary)]"
+                ? "border-b-2 border-black dark:border-white cursor-pointer text-black dark:text-[var(--text-secondary)]"
                 : ""
             }`}
             onClick={() => setActiveTab("details")}
@@ -187,7 +187,7 @@ const ProductDetail = ({ product, id }) => {
           <button
             className={`px-6 py-3 max-[375px]:px-0 max-[375px]:py-3 w-1/2 text-[1rem] ${
               activeTab === "reviews"
-                ? "border-b-2 border-black dark:border-white text-black dark:text-[var(--text-secondary)]"
+                ? "border-b-2 border-black dark:border-white cursor-pointer text-black dark:text-[var(--text-secondary)]"
                 : ""
             }`}
             onClick={() => setActiveTab("reviews")}
@@ -208,17 +208,17 @@ const ProductDetail = ({ product, id }) => {
                   </span>
                 </h2>
                 <div className="flex items-center max-[425px]:gap-1 gap-3">
-                  <button className="bg-gray-100 p-2 rounded-full dark:bg-black ">
+                  <button className="bg-gray-100 p-2 cursor-pointer rounded-full dark:bg-black  ">
                     <img
-                      src="/icons/filter.png"
-                      className="w-4 h-4 dark:invert"
+                      src="/icons/filter.svg"
+                      className="w-4 h-4  dark:invert"
                     />
                   </button>
-                  <select className="bg-gray-100 dark:bg-black px-4 py-2 rounded-md text-sm outline-none max-[425px]:hidden">
+                  <select className="bg-gray-100 dark:bg-black px-4 py-2 rounded-md text-sm outline-none max-[425px]:hidden cursor-pointer">
                     <option>Latest</option>
                     <option>Oldest</option>
                   </select>
-                  <button className="bg-black text-white px-4 py-2 max-[425px]:text-sm max-[425px]:p-2 rounded-full ">
+                  <button className="bg-black text-white px-4 py-2 max-[425px]:text-sm max-[425px]:p-2 rounded-full  cursor-pointer">
                     Write a Review
                   </button>
                 </div>
@@ -239,7 +239,7 @@ const ProductDetail = ({ product, id }) => {
             </div>
 
             <div className="mt-6 max-[425px]:w-full flex justify-center items-center">
-              <button className="bg-white dark:bg-[var(--card-bg)] px-6 border border-[#b2b2b2] py-2  rounded-full max-[425px]:w-[90%] hover:bg-gray-800 transition">
+              <button className="bg-white dark:bg-[var(--card-bg)] px-6 border border-[#b2b2b2] py-2  rounded-full max-[425px]:w-[90%] hover:bg-gray-800 transition cursor-pointer">
                 Load More Reviews
               </button>
             </div>
@@ -260,13 +260,13 @@ const ProductDetail = ({ product, id }) => {
         )}
       </div>
       {ProductAdded && (
-        <div className="fixed bottom-2 left-2 rounded transform  z-50 bg-white dark:bg-[#3a3a3a]  shadow-lg px-3 py-1 flex items-center gap-4 animate-fade-in-up ">
-          <span className="text-gray-700 dark:text-[var(--text-secondary)] text-sm">
+        <div className="fixed bottom-2 left-2 rounded transform  z-50 bg-gray-200 dark:bg-[#3a3a3a]  shadow-lg px-3 py-1 flex items-center gap-4 animate-fade-in-up border dark:border-none border-gray-700">
+          <span className="text-gray-700  dark:text-[var(--text-secondary)] text-sm">
             Product added to cart
           </span>
           <button
             onClick={() => Navigate("/cart")}
-            className="bg-black text-white text-sm px-4 py-2 rounded-full hover:bg-gray-800 transition"
+            className="bg-black text-white text-sm px-4 py-2 cursor-pointer rounded-full hover:bg-gray-800 transition"
           >
             Go to Cart
           </button>

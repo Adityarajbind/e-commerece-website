@@ -22,7 +22,7 @@ const CartItem = ({ item, onUpdate ,removeFromCart}) => {
           {/* Delete */}
           <button
             onClick={() => removeFromCart(id)}
-            className=" text-red-500 hover:text-red-700 self-start"
+            className=" text-red-500 hover:text-red-700 self-start cursor-pointer"
           >
             <Trash2 size={18} />
           </button>
@@ -44,16 +44,16 @@ const CartItem = ({ item, onUpdate ,removeFromCart}) => {
           <div className="flex items-center gap-2">
             <button
               onClick={decrease}
-              className="w-8 h-8 max-[425px]:w-6 max-[425px]:h-6 flex items-center justify-center rounded-full bg-gray-100 text-xl"
+              className="w-8 h-8 max-[425px]:w-6 max-[425px]:h-6 flex items-center justify-center rounded-full bg-gray-100 text-xl hover:bg-gray-400 "
             >
-              <Minus size={16} className="dark:invert" />
+              <Minus size={16} className="dark:invert cursor-pointer " />
             </button>
             <span>{quantity}</span>
             <button
               onClick={increase}
-              className="w-8 h-8 max-[425px]:w-6 max-[425px]:h-6 flex items-center justify-center rounded-full bg-gray-100 text-xl"
+              className="w-8 h-8 max-[425px]:w-6 max-[425px]:h-6 flex items-center justify-center rounded-full bg-gray-100 text-xl hover:bg-gray-400 "
             >
-              <Plus size={16} className="dark:invert" />
+              <Plus size={16} className="dark:invert cursor-pointer " />
             </button>
           </div>
         </div>

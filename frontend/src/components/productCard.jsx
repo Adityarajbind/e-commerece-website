@@ -52,7 +52,7 @@ const ProductCard = ({
   return (
     <div
       onClick={() => navigate(`/product/${id}`)}
-      className={`w-full h-full bg-white dark:bg-[var(--card-bg)] sm:p-2 rounded-xl flex flex-col cursor-pointer ${varriant == 'default'?"p-2": ""}`}
+      className={`w-full h-full bg-white hover:bg-neutral-200 dark:hover:bg-neutral-700 transform-all duration-300 ease-in  dark:bg-[var(--card-bg)] sm:p-2 rounded-xl flex flex-col cursor-pointer ${varriant == 'default'?"p-2": ""}`}
     >
       <div
         className={`w-full h-[17rem] flex items-center justify-center rounded-xl bg-no-repeat bg-cover bg-center ${variantStyles[varriant]}`}

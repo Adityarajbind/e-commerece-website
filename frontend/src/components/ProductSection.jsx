@@ -80,7 +80,7 @@ const ProductSection = ({ title, products }) => {
         </div>
 
         <div className="view-more-btn mt-6 max-[425px]:w-full flex justify-center items-center">
-          <button className="bg-white dark:bg-[var(--card-bg)] px-6 border py-2  rounded-full max-[425px]:w-[90%] hover:bg-gray-800 transition">
+          <button className="bg-white dark:bg-[var(--card-bg)] px-6 border py-2  rounded-full max-[425px]:w-[90%] hover:bg-gray-800 transition cursor-pointer">
             View More
           </button>
         </div>

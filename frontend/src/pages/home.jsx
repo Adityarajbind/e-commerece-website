@@ -62,10 +62,10 @@ function Home() {
           <p className="text-gray-600 max-w-xl mb-8 md:text-[1rem] text-[0.8rem] dark:text-[var(--text-secondary)]">
             Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
-            style.
+            style. This Website is made as a Practise Project !
           </p>
           <button
-            className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition max-[426px]:w-full"
+            className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition max-[426px]:w-full cursor-pointer"
             onClick={() => {
               navigate("/category/casual");
             }}
@@ -173,10 +173,10 @@ function Home() {
       </h1>
       <div className="relative overflow-hidden mb-10">
         {/* Left blur */}
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r dark:from-[--card-bg] from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-32 hidden dark:inline bg-gradient-to-l dark:from-[--card-bg] from-neutral-800 to-[#121212] z-10" />
 
         {/* Right blur */}
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l dark:from-[--card-bg] from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-32 hidden dark:inline bg-gradient-to-r dark:from-[--card-bg] from-neutral-800 to-[#121212] z-10" />
 
         {/* Slider */}
         <Slider {...sliderSettings}>
