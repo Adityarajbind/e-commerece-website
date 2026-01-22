@@ -178,9 +178,9 @@ const AccountSidebar = () => {
               aria-label="Toggle Dark Mode"
             >
               {!darkMode ? (
-                <img src="/assets/light.svg" alt="Light Mode" />
+                <img src="/assets/light.svg" loading="lazy" alt="Light Mode" />
               ) : (
-                <img src="/assets/dark.svg" alt="Dark Mode" />
+                <img src="/assets/dark.svg" loading="lazy" alt="Dark Mode" />
               )}
             </button>
           </li>
