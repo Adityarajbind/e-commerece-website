@@ -36,6 +36,7 @@ const ProductDetail = ({ product, id }) => {
             {product.thumbnails?.map((thumb, index) => (
               <div
                 key={index}
+                loading="lazy"
                 className={`${
                   selectedShirt === thumb ? "border-2 border-gray-600" : ""
                 } md:w-full md:h-1/3 h-full w-1/3 max-[768px]:aspect-square bg-no-repeat bg-cover rounded-2xl cursor-pointer`}
@@ -45,6 +46,7 @@ const ProductDetail = ({ product, id }) => {
             ))}
           </div>
           <div
+            loading="lazy"
             className="md:w-[70%] md:h-full w-full h-[75%] max-[768px]:aspect-[4/5] bg-no-repeat bg-cover bg-center rounded-2xl"
             style={{
               backgroundImage: selectedShirt
