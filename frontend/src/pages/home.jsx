@@ -100,6 +100,7 @@ function Home() {
             src="/assets/Group 17 dark.png"
             alt="Fashion"
             className="h-full w-full"
+            loading="lazy"
           />
         </div>
       </div>

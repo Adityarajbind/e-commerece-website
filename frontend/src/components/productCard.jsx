@@ -56,7 +56,7 @@ const ProductCard = ({
     >
       <div
         className={`w-full h-[17rem] flex items-center justify-center rounded-xl bg-no-repeat bg-cover bg-center ${variantStyles[varriant]}`}
-        
+        loading="lazy"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="mt-4 flex flex-col justify-between my-auto">
