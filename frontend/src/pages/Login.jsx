@@ -40,7 +40,7 @@ export default function Login() {
     try {
       const res = await axios.post(
         "https://e-commerece-website-backend.onrender.com/api/auth/login",
-        form
+        form,
       );
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -51,9 +51,22 @@ export default function Login() {
     }
   };
 
+  const handleGuestLogin = async () => {
+    try {
+      const res = await axios.post("https://e-commerece-website-backend.onrender.com/api/auth/guest");
+
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      navigate("/");
+    } catch (err) {
+      setMsg(err.response?.data?.error || "Login failed try later");
+    }
+  };
+
   return (
     <>
-      <span className="message bg-yellow-700 px-2 rounded m-1 absolute top-0 z-99">
+      <span className="message bg-red-300 text-red-600  px-2 py-1 rounded m-1 absolute top-0 z-99">
         {msg}
       </span>
       <div className="h-full grid grid-cols-1 md:grid-cols-2 bg-white relative">
@@ -134,6 +147,14 @@ export default function Login() {
               Don’t have an account?{" "}
               <a href="/register" className="text-black font-medium underline">
                 Register
+              </a>{" "}
+              Or Login as{" "}
+              <a
+                href="#"
+                onClick={handleGuestLogin}
+                className="text-black font-medium underline"
+              >
+                Guest
               </a>
             </p>
           </div>

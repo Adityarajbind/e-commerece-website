@@ -45,7 +45,6 @@ export default function Register() {
       setMsg("Registration successful! Redirecting to login...");
       navigate("/login");
     } catch (err) {
-      console.log(err);
       const errorMsg =
         err.message || "Something went wrong. Please try again.";
       setMsg(errorMsg);

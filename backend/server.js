@@ -20,9 +20,9 @@ const allowedOrigins = [
 app.use(express.json()); 
 app.use(cors({
   origin: allowedOrigins,
-  credentials: true, // if you're using cookies or auth headers
-}));          // Allows frontend to access backend
-app.use(helmet());          // Secures Express apps by setting various HTTP headers
+  credentials: true, 
+}));         
+app.use(helmet());          
 
 app.use("/api", rateLimit({
   windowMs: 15 * 60 * 1000,

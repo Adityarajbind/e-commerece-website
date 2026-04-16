@@ -68,4 +68,28 @@ router.post(
   }
 );
 
+// Guest
+router.post("/guest", async (req, res) => {
+  try {
+    const guestId = "guest_" + Date.now();
+
+    const token = jwt.sign(
+      { id: guestId, role: "guest" },
+      JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    res.json({
+      token,
+      user: {
+        id: guestId,
+        username: "Guest",
+        role: "guest",
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
